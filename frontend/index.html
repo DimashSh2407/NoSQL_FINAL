@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформа онлайн-курсов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">📚 Онлайн-Курсы</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="pages/login.html" id="loginLink">Вход</a></li>
+                    <li><a href="pages/register.html" id="registerLink">Регистрация</a></li>
+                    <li><a href="pages/my-courses.html" id="myCoursesLink" style="display: none;">Мои курсы</a></li>
+                    <li><a href="pages/admin.html" id="adminLink" style="display: none;">Панель управления</a></li>
+                    <li><a href="#" id="logoutLink" style="display: none;">Выход</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Добро пожаловать на платформу онлайн-курсов!</h2>
+            <p>Изучайте новые навыки с лучшими инструкторами</p>
+        </section>
+
+        <section class="courses-section">
+            <h2>Доступные курсы</h2>
+            <div id="coursesContainer" class="courses-grid">
+                <!-- Курсы будут загружены динамически -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Платформа онлайн-курсов. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

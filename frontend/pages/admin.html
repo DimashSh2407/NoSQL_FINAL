@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления - Платформа онлайн-курсов</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">📚 Онлайн-Курсы</h1>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="admin.html" class="active">Панель управления</a></li>
+                    <li><a href="#" id="logoutLink">Выход</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Панель управления инструктора</h2>
+        
+        <section class="admin-section">
+            <h3>Создать новый курс</h3>
+            <form id="createCourseForm" class="course-form">
+                <div class="form-group">
+                    <label for="title">Название курса:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Описание:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Цена (₽):</label>
+                    <input type="number" id="price" min="0" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Создать курс</button>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <h3>Мои курсы</h3>
+            <div id="myCoursesContainer" class="courses-grid">
+                <!-- Курсы будут загружены динамически -->
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h3>Статистика</h3>
+            <div id="statsContainer">
+                <!-- Статистика будет загружена динамически -->
+            </div>
+        </section>
+
+        <div id="errorMessage" class="error-message"></div>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
+
