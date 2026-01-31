@@ -57,7 +57,7 @@ function displayMyCourses(enrollments) {
         return `
             <div class="course-card">
                 <h3>${course.title}</h3>
-                <p class="instructor">Инструктор: ${course.instructor?.name || 'Не указан'}</p>
+                <p class="instructor">Instructor: ${course.instructor?.name || 'Not specified'}</p>
                 <p class="description">${course.description}</p>
                 <div class="progress-section">
                     <p>Прогресс: ${progress}%</p>

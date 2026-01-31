@@ -64,8 +64,8 @@ function displayCourseDetails(course) {
         <div class="course-details">
             <h2>${course.title}</h2>
             <div class="meta">
-                <p><strong>Инструктор:</strong> ${course.instructor?.name || 'Не указан'}</p>
-                <p><strong>Цена:</strong> ${course.price} ₽</p>
+                <p><strong>Instructor:</strong> ${course.instructor?.name || 'Not specified'}</p>
+                <p><strong>Price:</strong> ${course.price} ₸</p>
             </div>
             <div class="description">
                 <h3>Описание</h3>
@@ -73,13 +73,13 @@ function displayCourseDetails(course) {
             </div>
             ${actionButton}
             <div class="lessons-list">
-                <h3>Уроки курса (${course.lessons?.length || 0})</h3>
+                <h3>Course Lessons (${course.lessons?.length || 0})</h3>
                 ${course.lessons && course.lessons.length > 0 
                     ? course.lessons.map((lesson, index) => `
                         <div class="lesson-item">
-                            <h4>Урок ${index + 1}: ${lesson.title}</h4>
+                            <h4>Lesson ${index + 1}: ${lesson.title}</h4>
                             <p>${lesson.content}</p>
-                            <p class="duration">Длительность: ${lesson.duration} минут</p>
+                            <p class="duration">Duration: ${lesson.duration} minutes</p>
                         </div>
                     `).join('')
                     : '<p>Уроки пока не добавлены</p>'

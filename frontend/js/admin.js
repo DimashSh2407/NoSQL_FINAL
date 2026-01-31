@@ -61,8 +61,8 @@ function displayMyCourses(courses) {
         <div class="course-card">
             <h3>${course.title}</h3>
             <p class="description">${course.description}</p>
-            <p class="price">${course.price} ₽</p>
-            <p class="lessons-count">Уроков: ${course.lessons?.length || 0}</p>
+            <p class="price">${course.price} ₸</p>
+            <p class="lessons-count">Lessons: ${course.lessons?.length || 0}</p>
             <button class="btn btn-primary" onclick="addLesson('${course._id}')">
                 Добавить урок
             </button>
@@ -114,13 +114,13 @@ document.getElementById('createCourseForm')?.addEventListener('submit', async (e
 
 // Добавление урока
 async function addLesson(courseId) {
-    const title = prompt('Название урока:');
+    const title = prompt('Lesson title:');
     if (!title) return;
 
-    const content = prompt('Содержание урока:');
+    const content = prompt('Lesson content:');
     if (!content) return;
 
-    const duration = parseInt(prompt('Длительность урока (в минутах):'));
+    const duration = parseInt(prompt('Lesson duration (in minutes):'));
     if (!duration || isNaN(duration)) return;
 
     const token = localStorage.getItem('token');
@@ -227,7 +227,7 @@ function displayStats(stats) {
             </div>
             <div class="stat-card">
                 <h4>Общая выручка</h4>
-                <div class="stat-value">${totalStats.totalRevenue || 0} ₽</div>
+                <div class="stat-value">${totalStats.totalRevenue || 0} ₸</div>
             </div>
             <div class="stat-card">
                 <h4>Всего курсов</h4>
@@ -243,8 +243,8 @@ function displayStats(stats) {
             <div class="course-card">
                 <h3>${course.title}</h3>
                 <p>Студентов: ${course.studentCount}</p>
-                <p>Выручка: ${course.revenue} ₽</p>
-                <p>Инструктор: ${course.instructorName || 'Не указан'}</p>
+                <p>Revenue: ${course.revenue} ₸</p>
+                <p>Instructor: ${course.instructorName || 'Not specified'}</p>
             </div>
         `).join('');
         html += '</div>';

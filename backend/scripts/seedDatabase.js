@@ -23,24 +23,24 @@ async function seedDatabase() {
     await User.deleteMany({});
     console.log('✅ База данных очищена');
 
-    // Создание инструкторов
+    // Создание инструкторов (казахские имена на английском)
     console.log('\n👨‍🏫 Создание инструкторов...');
     const instructors = [
       {
-        name: 'Александр Петров',
-        email: 'alex.petrov@lms.com',
+        name: 'Aidar Nurlan',
+        email: 'aidar.nurlan@lms.com',
         password: 'instructor123',
         role: 'instructor'
       },
       {
-        name: 'Мария Иванова',
-        email: 'maria.ivanova@lms.com',
+        name: 'Aizhan Kuanysh',
+        email: 'aizhan.kuanysh@lms.com',
         password: 'instructor123',
         role: 'instructor'
       },
       {
-        name: 'Дмитрий Сидоров',
-        email: 'dmitry.sidorov@lms.com',
+        name: 'Daniyar Askar',
+        email: 'daniyar.askar@lms.com',
         password: 'instructor123',
         role: 'instructor'
       }
@@ -54,18 +54,18 @@ async function seedDatabase() {
       console.log(`✅ Создан инструктор: ${instructor.name}`);
     }
 
-    // Создание студентов
+    // Создание студентов (казахские имена на английском)
     console.log('\n👨‍🎓 Создание студентов...');
     const students = [
       {
-        name: 'Иван Студентов',
-        email: 'ivan.student@lms.com',
+        name: 'Aliya Nurzhan',
+        email: 'aliya.student@lms.com',
         password: 'student123',
         role: 'student'
       },
       {
-        name: 'Елена Ученикова',
-        email: 'elena.student@lms.com',
+        name: 'Asel Temir',
+        email: 'asel.student@lms.com',
         password: 'student123',
         role: 'student'
       }
@@ -79,219 +79,219 @@ async function seedDatabase() {
       console.log(`✅ Создан студент: ${student.name}`);
     }
 
-    // Создание курсов с уроками
+    // Создание курсов с уроками (описания на английском, цены в тенге)
     console.log('\n📚 Создание курсов...');
     
     const coursesData = [
       {
-        title: 'JavaScript для начинающих',
-        description: 'Полный курс по основам JavaScript. Изучите переменные, функции, объекты и многое другое. Идеально подходит для тех, кто только начинает свой путь в программировании.',
-        price: 2999,
+        title: 'JavaScript for Beginners',
+        description: 'Complete course on JavaScript fundamentals. Learn variables, functions, objects and much more. Perfect for those just starting their programming journey.',
+        price: 15000, // тенге (примерно 2999 * 5)
         instructor: createdInstructors[0]._id,
         lessons: [
           {
-            title: 'Введение в JavaScript',
-            content: 'В этом уроке вы узнаете, что такое JavaScript, его историю и основные возможности. Мы рассмотрим, как JavaScript используется в веб-разработке и почему он так популярен.',
+            title: 'Introduction to JavaScript',
+            content: 'In this lesson you will learn what JavaScript is, its history and main features. We will explore how JavaScript is used in web development and why it is so popular.',
             duration: 45
           },
           {
-            title: 'Переменные и типы данных',
-            content: 'Изучите основы работы с переменными в JavaScript. Узнайте о различных типах данных: числа, строки, булевы значения, объекты и массивы. Практические примеры помогут закрепить материал.',
+            title: 'Variables and Data Types',
+            content: 'Learn the basics of working with variables in JavaScript. Discover different data types: numbers, strings, booleans, objects and arrays. Practical examples will help reinforce the material.',
             duration: 60
           },
           {
-            title: 'Функции в JavaScript',
-            content: 'Функции - это основа JavaScript. В этом уроке вы научитесь создавать функции, передавать параметры, использовать возвращаемые значения и работать с замыканиями.',
+            title: 'Functions in JavaScript',
+            content: 'Functions are the foundation of JavaScript. In this lesson you will learn to create functions, pass parameters, use return values and work with closures.',
             duration: 75
           },
           {
-            title: 'Работа с DOM',
-            content: 'Узнайте, как JavaScript взаимодействует с HTML-документом. Научитесь находить элементы, изменять их содержимое, добавлять обработчики событий и создавать динамические интерфейсы.',
+            title: 'Working with DOM',
+            content: 'Learn how JavaScript interacts with HTML documents. Master finding elements, changing their content, adding event handlers and creating dynamic interfaces.',
             duration: 90
           },
           {
-            title: 'Асинхронный JavaScript',
-            content: 'Изучите Promises, async/await и работу с асинхронным кодом. Узнайте, как выполнять HTTP-запросы, работать с таймерами и обрабатывать ошибки в асинхронных операциях.',
+            title: 'Asynchronous JavaScript',
+            content: 'Study Promises, async/await and working with asynchronous code. Learn how to make HTTP requests, work with timers and handle errors in asynchronous operations.',
             duration: 80
           }
         ]
       },
       {
-        title: 'Python: от основ к продвинутому уровню',
-        description: 'Комплексный курс по Python для всех уровней. От базового синтаксиса до работы с базами данных и веб-фреймворками. Практические проекты включены.',
-        price: 3999,
+        title: 'Python: From Basics to Advanced',
+        description: 'Comprehensive Python course for all levels. From basic syntax to working with databases and web frameworks. Practical projects included.',
+        price: 20000, // тенге
         instructor: createdInstructors[1]._id,
         lessons: [
           {
-            title: 'Установка и настройка Python',
-            content: 'Начните с установки Python на вашу систему. Узнайте о различных версиях Python, установке пакетов через pip и настройке виртуального окружения для изоляции проектов.',
+            title: 'Python Installation and Setup',
+            content: 'Start by installing Python on your system. Learn about different Python versions, installing packages via pip and setting up virtual environments for project isolation.',
             duration: 30
           },
           {
-            title: 'Основы синтаксиса Python',
-            content: 'Изучите базовый синтаксис Python: переменные, операторы, условные конструкции, циклы. Узнайте о философии Python и его особенностях по сравнению с другими языками.',
+            title: 'Python Syntax Basics',
+            content: 'Learn basic Python syntax: variables, operators, conditionals, loops. Discover Python philosophy and its features compared to other languages.',
             duration: 50
           },
           {
-            title: 'Работа с коллекциями',
-            content: 'Глубокое погружение в списки, кортежи, словари и множества. Узнайте о методах работы с коллекциями, генераторах списков и эффективных способах обработки данных.',
+            title: 'Working with Collections',
+            content: 'Deep dive into lists, tuples, dictionaries and sets. Learn about collection methods, list comprehensions and efficient data processing techniques.',
             duration: 65
           },
           {
-            title: 'Объектно-ориентированное программирование',
-            content: 'Изучите классы, объекты, наследование, полиморфизм и инкапсуляцию в Python. Научитесь создавать собственные классы и использовать встроенные возможности языка.',
+            title: 'Object-Oriented Programming',
+            content: 'Study classes, objects, inheritance, polymorphism and encapsulation in Python. Learn to create custom classes and use built-in language features.',
             duration: 90
           },
           {
-            title: 'Работа с файлами и базами данных',
-            content: 'Научитесь читать и записывать файлы, работать с CSV и JSON. Изучите основы работы с базами данных через SQLite и библиотеку sqlite3.',
+            title: 'File Handling and Databases',
+            content: 'Learn to read and write files, work with CSV and JSON. Study database basics through SQLite and the sqlite3 library.',
             duration: 70
           },
           {
-            title: 'Веб-разработка с Flask',
-            content: 'Создайте свое первое веб-приложение на Flask. Узнайте о маршрутизации, шаблонах, формах и работе с базами данных в веб-контексте.',
+            title: 'Web Development with Flask',
+            content: 'Create your first web application with Flask. Learn about routing, templates, forms and database work in web context.',
             duration: 100
           }
         ]
       },
       {
-        title: 'Веб-дизайн и UI/UX',
-        description: 'Современный курс по веб-дизайну. Изучите принципы UI/UX, работу с цветом, типографикой, создание адаптивных макетов и использование современных инструментов дизайна.',
-        price: 3499,
+        title: 'Web Design and UI/UX',
+        description: 'Modern web design course. Learn UI/UX principles, color work, typography, creating responsive layouts and using modern design tools.',
+        price: 17500, // тенге
         instructor: createdInstructors[2]._id,
         lessons: [
           {
-            title: 'Основы веб-дизайна',
-            content: 'Введение в веб-дизайн: принципы композиции, работа с пространством, баланс элементов. Узнайте о разнице между UI и UX и их важности для успешного продукта.',
+            title: 'Web Design Fundamentals',
+            content: 'Introduction to web design: composition principles, working with space, element balance. Learn about the difference between UI and UX and their importance for successful products.',
             duration: 40
           },
           {
-            title: 'Цвет в веб-дизайне',
-            content: 'Изучите теорию цвета, цветовые схемы, психологию цвета и его влияние на пользователей. Научитесь создавать гармоничные цветовые палитры для веб-сайтов.',
+            title: 'Color in Web Design',
+            content: 'Study color theory, color schemes, color psychology and its impact on users. Learn to create harmonious color palettes for websites.',
             duration: 55
           },
           {
-            title: 'Типографика',
-            content: 'Узнайте о выборе шрифтов, иерархии текста, читаемости и доступности. Изучите правила работы с типографикой в веб-дизайне и создание эффективных текстовых блоков.',
+            title: 'Typography',
+            content: 'Learn about font selection, text hierarchy, readability and accessibility. Study typography rules in web design and creating effective text blocks.',
             duration: 50
           },
           {
-            title: 'Адаптивный дизайн',
-            content: 'Научитесь создавать дизайны, которые отлично выглядят на всех устройствах. Изучите принципы mobile-first, брейкпоинты, гибкие сетки и медиа-запросы.',
+            title: 'Responsive Design',
+            content: 'Learn to create designs that look great on all devices. Study mobile-first principles, breakpoints, flexible grids and media queries.',
             duration: 75
           },
           {
-            title: 'Инструменты дизайнера',
-            content: 'Обзор современных инструментов: Figma, Adobe XD, Sketch. Научитесь создавать прототипы, работать с компонентами и передавать дизайн разработчикам.',
+            title: 'Designer Tools',
+            content: 'Overview of modern tools: Figma, Adobe XD, Sketch. Learn to create prototypes, work with components and hand off designs to developers.',
             duration: 60
           }
         ]
       },
       {
-        title: 'React: современная разработка',
-        description: 'Освойте React - самую популярную библиотеку для создания пользовательских интерфейсов. От компонентов до управления состоянием и работы с API.',
-        price: 4499,
+        title: 'React: Modern Development',
+        description: 'Master React - the most popular library for creating user interfaces. From components to state management and API integration.',
+        price: 22500, // тенге
         instructor: createdInstructors[0]._id,
         lessons: [
           {
-            title: 'Введение в React',
-            content: 'Познакомьтесь с React: что это такое, зачем он нужен и как он работает. Установите окружение разработки и создайте свой первый компонент.',
+            title: 'Introduction to React',
+            content: 'Get acquainted with React: what it is, why it is needed and how it works. Set up your development environment and create your first component.',
             duration: 45
           },
           {
-            title: 'Компоненты и JSX',
-            content: 'Изучите основы создания компонентов, синтаксис JSX, props и их использование. Научитесь создавать переиспользуемые компоненты и структурировать приложение.',
+            title: 'Components and JSX',
+            content: 'Learn the basics of creating components, JSX syntax, props and their usage. Learn to create reusable components and structure applications.',
             duration: 60
           },
           {
-            title: 'Состояние и хуки',
-            content: 'Узнайте о состоянии компонентов, хуке useState, useEffect и других важных хуках. Научитесь управлять состоянием приложения и обрабатывать побочные эффекты.',
+            title: 'State and Hooks',
+            content: 'Learn about component state, useState hook, useEffect and other important hooks. Master managing application state and handling side effects.',
             duration: 80
           },
           {
-            title: 'Роутинг с React Router',
-            content: 'Изучите навигацию в React-приложениях с помощью React Router. Создайте многостраничное приложение с защищенными маршрутами и динамическими параметрами.',
+            title: 'Routing with React Router',
+            content: 'Study navigation in React applications using React Router. Create a multi-page application with protected routes and dynamic parameters.',
             duration: 70
           },
           {
-            title: 'Работа с API',
-            content: 'Научитесь получать данные из API, обрабатывать загрузку и ошибки. Изучите лучшие практики работы с асинхронными запросами в React-приложениях.',
+            title: 'Working with API',
+            content: 'Learn to fetch data from APIs, handle loading and errors. Study best practices for working with asynchronous requests in React applications.',
             duration: 65
           },
           {
-            title: 'Управление состоянием с Redux',
-            content: 'Изучите Redux для управления глобальным состоянием приложения. Узнайте о actions, reducers, store и интеграции Redux с React.',
+            title: 'State Management with Redux',
+            content: 'Study Redux for managing global application state. Learn about actions, reducers, store and Redux integration with React.',
             duration: 90
           }
         ]
       },
       {
-        title: 'Базы данных и SQL',
-        description: 'Полный курс по работе с базами данных. Изучите SQL, проектирование баз данных, нормализацию и работу с MongoDB. Практические примеры и реальные проекты.',
-        price: 3799,
+        title: 'Databases and SQL',
+        description: 'Complete course on working with databases. Learn SQL, database design, normalization and working with MongoDB. Practical examples and real projects.',
+        price: 19000, // тенге
         instructor: createdInstructors[1]._id,
         lessons: [
           {
-            title: 'Введение в базы данных',
-            content: 'Узнайте о типах баз данных, их преимуществах и недостатках. Изучите основные концепции: таблицы, записи, связи и индексы.',
+            title: 'Introduction to Databases',
+            content: 'Learn about database types, their advantages and disadvantages. Study basic concepts: tables, records, relationships and indexes.',
             duration: 40
           },
           {
-            title: 'Основы SQL',
-            content: 'Изучите базовые SQL-команды: SELECT, INSERT, UPDATE, DELETE. Научитесь фильтровать данные, сортировать результаты и использовать агрегатные функции.',
+            title: 'SQL Basics',
+            content: 'Learn basic SQL commands: SELECT, INSERT, UPDATE, DELETE. Master filtering data, sorting results and using aggregate functions.',
             duration: 60
           },
           {
-            title: 'JOIN и связи между таблицами',
-            content: 'Узнайте о различных типах JOIN: INNER, LEFT, RIGHT, FULL. Научитесь объединять данные из нескольких таблиц и работать со сложными запросами.',
+            title: 'JOINs and Table Relationships',
+            content: 'Learn about different JOIN types: INNER, LEFT, RIGHT, FULL. Master combining data from multiple tables and working with complex queries.',
             duration: 75
           },
           {
-            title: 'Проектирование баз данных',
-            content: 'Изучите процесс проектирования баз данных: ER-диаграммы, нормализация, выбор типов данных. Научитесь создавать эффективные и масштабируемые схемы.',
+            title: 'Database Design',
+            content: 'Study the database design process: ER diagrams, normalization, data type selection. Learn to create efficient and scalable schemas.',
             duration: 80
           },
           {
-            title: 'NoSQL и MongoDB',
-            content: 'Познакомьтесь с NoSQL базами данных на примере MongoDB. Узнайте о документах, коллекциях, запросах и агрегации. Сравните SQL и NoSQL подходы.',
+            title: 'NoSQL and MongoDB',
+            content: 'Get acquainted with NoSQL databases using MongoDB as an example. Learn about documents, collections, queries and aggregation. Compare SQL and NoSQL approaches.',
             duration: 70
           }
         ]
       },
       {
-        title: 'Node.js и серверная разработка',
-        description: 'Изучите Node.js для создания серверных приложений. От основ до создания REST API, работы с базами данных и развертывания приложений.',
-        price: 4299,
+        title: 'Node.js and Server Development',
+        description: 'Learn Node.js for creating server applications. From basics to creating REST APIs, working with databases and deploying applications.',
+        price: 21500, // тенге
         instructor: createdInstructors[2]._id,
         lessons: [
           {
-            title: 'Введение в Node.js',
-            content: 'Познакомьтесь с Node.js, его архитектурой и event loop. Узнайте о преимуществах Node.js для серверной разработки и установите окружение.',
+            title: 'Introduction to Node.js',
+            content: 'Get acquainted with Node.js, its architecture and event loop. Learn about Node.js advantages for server development and set up your environment.',
             duration: 35
           },
           {
-            title: 'Модули и NPM',
-            content: 'Изучите систему модулей Node.js, CommonJS и ES6 модули. Научитесь работать с NPM: устанавливать пакеты, создавать package.json и управлять зависимостями.',
+            title: 'Modules and NPM',
+            content: 'Study Node.js module system, CommonJS and ES6 modules. Learn to work with NPM: install packages, create package.json and manage dependencies.',
             duration: 50
           },
           {
-            title: 'Express.js и создание API',
-            content: 'Создайте свой первый сервер на Express.js. Изучите маршрутизацию, middleware, обработку запросов и создание REST API endpoints.',
+            title: 'Express.js and API Creation',
+            content: 'Create your first server with Express.js. Study routing, middleware, request handling and creating REST API endpoints.',
             duration: 75
           },
           {
-            title: 'Работа с базами данных',
-            content: 'Научитесь подключать и работать с MongoDB через Mongoose. Изучите создание моделей, схем, валидацию данных и выполнение запросов.',
+            title: 'Working with Databases',
+            content: 'Learn to connect and work with MongoDB through Mongoose. Study creating models, schemas, data validation and executing queries.',
             duration: 80
           },
           {
-            title: 'Аутентификация и безопасность',
-            content: 'Реализуйте систему аутентификации с JWT токенами. Узнайте о хешировании паролей, защите маршрутов, CORS и лучших практиках безопасности.',
+            title: 'Authentication and Security',
+            content: 'Implement authentication system with JWT tokens. Learn about password hashing, route protection, CORS and security best practices.',
             duration: 85
           },
           {
-            title: 'Развертывание приложений',
-            content: 'Изучите процесс развертывания Node.js приложений. Узнайте о платформах хостинга, переменных окружения, логировании и мониторинге.',
+            title: 'Application Deployment',
+            content: 'Study the Node.js application deployment process. Learn about hosting platforms, environment variables, logging and monitoring.',
             duration: 60
           }
         ]
@@ -364,4 +364,3 @@ async function seedDatabase() {
 }
 
 seedDatabase();
-

@@ -60,7 +60,7 @@ function displayCourses(courses) {
         // Инструктор
         const instructor = document.createElement('p');
         instructor.className = 'instructor';
-        instructor.textContent = `Инструктор: ${course.instructor?.name || 'Не указан'}`;
+        instructor.textContent = `Instructor: ${course.instructor?.name || 'Not specified'}`;
         card.appendChild(instructor);
         
         // Описание
@@ -72,13 +72,13 @@ function displayCourses(courses) {
         // Цена
         const price = document.createElement('p');
         price.className = 'price';
-        price.textContent = `${course.price || 0} ₽`;
+        price.textContent = `${course.price || 0} ₸`;
         card.appendChild(price);
         
         // Количество уроков
         const lessonsCount = document.createElement('p');
         lessonsCount.className = 'lessons-count';
-        lessonsCount.textContent = `Уроков: ${course.lessons?.length || 0}`;
+        lessonsCount.textContent = `Lessons: ${course.lessons?.length || 0}`;
         card.appendChild(lessonsCount);
         
         // Кнопка
